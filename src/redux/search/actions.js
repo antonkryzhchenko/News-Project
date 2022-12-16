@@ -1,0 +1,1 @@
+export const searchNews = (news) => ({type: "SEARCH_NEWS", payload: news});

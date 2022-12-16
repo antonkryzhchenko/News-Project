@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #2d3033;
+  --secondary-color: #ffffff;
+  --text-color: #a9afb1;
+  --accent-color: #FBC00D;
+  --content-width: 1170px;
+  --mobile-padding: 15px;
+  --gutter: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0 auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  padding-left: var(--mobile-padding);
+  padding-right: var(--mobile-padding);
+  max-width: calc(var(--content-width) + var(--mobile-padding) * 2);
+  margin: 0 auto;
+}
