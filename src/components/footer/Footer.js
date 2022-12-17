@@ -1,8 +1,8 @@
 import styles from '../styles/footer.module.css';
 
 import youtube from '../../images/footer-images/youtube.png';
-import telegram from '../../images/footer-images/telegram.png';
-import google from '../../images/footer-images/google.png';
+import instagram from '../../images/footer-images/instagram.png';
+import twitter from '../../images/footer-images/twitter.png';
 import linkedin from '../../images/footer-images/linkedin.png';
 
 
@@ -13,8 +13,8 @@ const Footer = () => {
 <div className={styles.footer}>
 <div className={styles.footerIcons}>
 <a className={styles.footerIcon} href="#"><img src={youtube} alt='youtube' /></a>
-<a className={styles.footerIcon} href="#"><img src={telegram} alt='telegram' /></a>
-<a className={styles.footerIcon} href="#"><img src={google} alt='google' /></a>
+<a className={styles.footerIcon} href="#"><img src={instagram} alt='instagram' /></a>
+<a className={styles.footerIcon} href="#"><img src={twitter} alt='twitter' /></a>
 <a className={styles.footerIcon} href="#"><img src={linkedin} alt='linkedin' /></a>
 </div>
 

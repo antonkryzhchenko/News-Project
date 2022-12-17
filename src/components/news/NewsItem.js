@@ -6,9 +6,13 @@ import axios from "axios";
 
 import { ADD_NEWS_TO_FAVOURITES } from "../../redux/news/actions";
 
-import Header from "../header/Header";
-
 import noImage from '../../images/noimage.jpg';
+
+import Loader from "../loader/Loader";
+
+import { contentText } from '../../const/Const';
+
+import styles from '../styles/newsItem.module.css';
 
 const url = 'https://newsdata.io/api/1/news?apikey=pub_13702e6091de01a9a37583ce1a10db68d2a3f&language=en';
 
@@ -25,20 +29,27 @@ const NewsItem = () => {
             })
     }, [id]);
 
-    return(
-        <div>
-            <div>
-                <Header />
+    if (!oneNews) {
+        return (
+            <div className="container">
+                <Loader />
             </div>
+        )
+    }
+
+    return(
+        <div className="container">
             {oneNews && (
-                <div>
-                    <img 
+                <div className={styles.newsItemContainer}>
+                    <img
+                        className={styles.newsItemImg}
                         src={oneNews.image_url ? oneNews.image_url : noImage}
                         alt='img not found'
                     />                    
-                    <h2>{oneNews.title}</h2>
-                    <p>{oneNews.content}</p>
-                    <button onClick={() => {dispatch(ADD_NEWS_TO_FAVOURITES(oneNews))}}>Прочитать позже</button>
+                    <h1>{oneNews.title}</h1>
+                    <p className={styles.newsItemText}>{oneNews.content ? oneNews.content : contentText}</p>
+                    <p className={styles.newsItemAuthor}>Author: {oneNews.creator ? oneNews.creator : 'No name'}</p>
+                    <button className={styles.button} onClick={() => {dispatch(ADD_NEWS_TO_FAVOURITES(oneNews))}}>Mark as important</button>
                 </div>
             )}
         </div>

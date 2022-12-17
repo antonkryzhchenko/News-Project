@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { changeTheme } from '../../redux/theme/actions';
+import { ADD_CATEGORY } from '../../redux/news/actions';
 
 import SwitcherTheme from './SwitcherTheme';
 
@@ -23,20 +24,12 @@ const Header = () => {
     }
 
     const classHeader = classNames(styles.header, {
-        [styles.header_night]: theme === 'dark',
-    });
-
-    const classHeaderCategories = classNames(styles.headerCategories, {
-        [styles.headerCategories_night]: theme === 'dark',
-    });
-
-    const classHeaderUl = classNames(styles.headerUl, {
-        [styles.headerUl_night]: theme === 'dark',
+        [styles.headerDark]: theme === 'dark',
     });
 
     return (
-        <div className={classHeader}>
-            <div className={styles.header}>
+        <div>
+            <div className={classHeader}>
             <Link to='/'>
             <img
             className={styles.headerLogo}
@@ -44,13 +37,13 @@ const Header = () => {
             alt='logo'
             />
             </Link>
-            <div className={classHeaderCategories}>
-                <ul className={classHeaderUl}>
-                    <li className={styles.headerLi}>Politics</li>
-                    <li className={styles.headerLi}>Business</li>
-                    <li className={styles.headerLi}>Technology</li>
-                    <li className={styles.headerLi}>Sports</li>
-                    <li className={styles.headerLi}>Health</li>
+            <div className={styles.headerCategories}>
+                <ul className={styles.headerUl}>
+                    <Link to={'/politics'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Politics</li></Link>
+                    <Link to={'/business'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Business</li></Link>
+                    <Link to={'/technology'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Technology</li></Link>
+                    <Link to={'/sports'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Sports</li></Link>
+                    <Link to={'/health'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Health</li></Link>
                 </ul>
             <Link to='/read'>
             <div className={styles.headerFavourites}>
@@ -62,9 +55,9 @@ const Header = () => {
             </div>
             </Link>
             </div>
-            </div>
             <div className={styles.headerSwitcher}>
                 <SwitcherTheme switchTheme={switchTheme} />
+            </div>
             </div>
         </div>
     )

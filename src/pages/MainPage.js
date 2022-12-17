@@ -1,13 +1,21 @@
-import Footer from '../components/footer/Footer';
-import Header from '../components/header/Header';
+import { useSelector } from 'react-redux';
+
 import NewsList from '../components/news/NewsList';
 
 const MainPage = () => {
+    const category = useSelector(state => state.news.category);
+
+    if (!category) {
+        return (
+            <div>
+                <NewsList />
+            </div>
+        )
+    }
+
     return (
         <>
-            <Header />
             <NewsList />
-            <Footer />
         </>
     )
 }

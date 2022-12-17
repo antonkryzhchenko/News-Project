@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import NewsToReadItem from "../components/news/NewsToReadItem";
-import Header from "../components/header/Header";
 
 import {REMOVE_NEWS_FROM_FAVOURITES} from '../redux/news/actions';
+
+import styles from '../components/styles/toReadPage.module.css';
 
 const Favourites = () => {
     const dispatch = useDispatch();
@@ -18,10 +19,9 @@ const Favourites = () => {
     })
 
         return(
-            <div>
-                <Header />
-                <div>
-                {oneFavNews}
+            <div className="container">
+                <div className={styles.newsToReadList}>
+                    {oneFavNews}
                 </div>
             </div>
         )

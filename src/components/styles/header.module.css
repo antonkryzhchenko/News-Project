@@ -7,6 +7,10 @@
     background-color: white;
 }
 
+.headerDark {
+    background-color: black;
+}
+
 .headerBox {
     display: flex;
     margin: 0 auto;
@@ -17,17 +21,10 @@
     align-items: center;
 }
 
-.header_night {
-    background-color: teal;
-}
-
 .headerLogo {
+    margin-left: 30px;
     width: 220px;
     height: 220px;
-}
-
-.headerUl_night {
-    color: white;
 }
 
 .headerUl li {
@@ -63,10 +60,10 @@
 
 .headerFavouritesLogo {
     margin-left: 30px;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
 }
 
 .headerSwitcher {
-    margin-left: auto;
+    margin-left: 15px;
 }

@@ -1,8 +1,6 @@
 :root {
-  --primary-color: #2d3033;
-  --secondary-color: #ffffff;
-  --text-color: #a9afb1;
   --accent-color: #FBC00D;
+  --text-color: #a9afb1;
   --content-width: 1170px;
   --mobile-padding: 15px;
   --gutter: 15px;
