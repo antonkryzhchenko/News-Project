@@ -1,6 +1,6 @@
 {
   "short_name": "NP",
-  "name": "News Pad",
+  "name": "NewsPad",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
