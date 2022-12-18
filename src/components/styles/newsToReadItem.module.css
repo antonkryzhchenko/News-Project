@@ -8,10 +8,24 @@
     border: 1px solid;
 }
 
+.newsToReadItemCardDark {
+  border: 1px solid white;
+}
+
 .newsToReadItemTitle {
     margin-top: 10px;
     font-size: 20px;
     font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .newsToReadItemTitle {
+    font-size: 18px;
+  }
+}
+
+.newsToReadItemTitleDark {
+  color: white;
 }
 
 .newsToReadItemAuthor {
@@ -20,9 +34,29 @@
     margin-top: 10px;
 }
 
+@media (max-width: 992px) {
+  .newsToReadItemAuthor {
+    font-size: 16px;
+  }
+}
+
+.newsToReadItemAuthorDark {
+  color: white;
+}
+
 .newsToReadItemPubDate {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .newsToReadItemPubDate {
+    font-size: 16px;
+  }
+}
+
+.newsToReadItemPubDateDark {
+  color: white;
 }
 
 .button {
@@ -41,14 +75,26 @@
     transition-duration: 0.4s;
     overflow: hidden;
     border-radius: 4px;
-  }
+}
+
+@media (max-width: 1200px) {
+    .button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .button {
+        font-size: 16px;
+    }
+}
   
-  .button:hover {
+.button:hover {
     background: #fff;
     color: #000;
-  }
+}
   
-  .button:after {
+.button:after {
     content: "";
     background: var(--accent-color);
     display: block;
@@ -59,13 +105,13 @@
     margin-top: -120%;
     opacity: 0;
     transition: all 0.8s;
-  }
+}
   
-  .button:active:after {
+.button:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s;
-  }
+}
   
-  .button:focus { outline:0; }
+.button:focus { outline:0; }

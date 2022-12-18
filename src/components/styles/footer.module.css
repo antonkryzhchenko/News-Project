@@ -1,53 +1,75 @@
-    .footer{
+.footer{
     background: black;
     padding: 30px 0px;
     text-align: center;
-    }
+}
 
-    .footerIcons {
-        display: flex;
-        justify-content: center;
-    }
+.footerIcons {
+    display: flex;
+    justify-content: center;
+}
 
+.footerIcon {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
     .footerIcon {
-        width: 80px;
-        height: 80px;
-        margin-left: 20px;
+        width: 60px;
+        height: 60px;
+        margin-left: 15px;
     }
+}
 
-    .footerIcon:first-child {
-        margin-left: 0;
-    }
+.footerIcon:first-child {
+    margin-left: 0;
+}
     
-    .footer .row{
+.footer .row{
     width: 100%;
     margin: 1% 0%;
     padding: 0.6% 0%;
     color: var(--text-color);
     font-size: 0.8em;
-    }
+}
     
-    .footer .row a{
+.footer .row a{
     text-decoration: none;
     color: var(--text-color);
     transition: 0.5s;
-    }
+}
     
-    .footer .row a:hover{
+.footer .row a:hover{
     color: #fff;
-    }
+}
     
-    .footer .row ul{
+.footer .row ul{
     width: 100%;
-    }
+}
     
-    .footer .row ul li{
+.footer .row ul li{
     display:inline-block;
     font-size: 20px;
-    margin:0px 30px;
+    margin: 0px 30px;
+}
+
+@media (max-width: 992px) {
+    .footer .row ul li {
+        font-size: 18px;
+        margin: 0px 20px;
     }
+}
+
+@media (max-width: 768px) {
+    .footer .row ul li {
+        font-size: 16px;
+        margin: 0px 10px;
+    }
+}
     
-    .footer .row a i{
+.footer .row a i{
     font-size: 2em;
     margin: 0% 1%;
-    }
+}
