@@ -10,6 +10,7 @@ import SwitcherTheme from './SwitcherTheme';
 import classNames from 'classnames';
 
 import logo from '../../images/logo.png';
+import logoDark from '../../images/logoDark.png';
 import favourites from '../../images/favourites.png';
 
 import styles from '../styles/header.module.css';
@@ -23,8 +24,20 @@ const Header = () => {
         dispatch(changeTheme(nextTheme));
     }
 
+    const logoSwitch = () => {
+        if (theme === 'light') {
+            return logo;
+        } else {
+            return logoDark;
+        }
+    }
+
     const classHeader = classNames(styles.header, {
         [styles.headerDark]: theme === 'dark',
+    });
+
+    const classHeaderUl = classNames(styles.headerUl, {
+        [styles.headerUlDark]: theme === 'dark'
     });
 
     return (
@@ -33,12 +46,12 @@ const Header = () => {
             <Link to='/'>
             <img
             className={styles.headerLogo}
-            src={logo}
+            src={logoSwitch()}
             alt='logo'
             />
             </Link>
             <div className={styles.headerCategories}>
-                <ul className={styles.headerUl}>
+                <ul className={classHeaderUl}>
                     <Link to={'/politics'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Politics</li></Link>
                     <Link to={'/business'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Business</li></Link>
                     <Link to={'/technology'}><li className={styles.headerLi} onClick={(e) => dispatch(ADD_CATEGORY(e.target.textContent.toLowerCase()))}>Technology</li></Link>

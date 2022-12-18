@@ -14,6 +14,8 @@ import Loader from "../loader/Loader";
 import styles from '../styles/newsList.module.css';
 import { ADD_NEWS } from "../../redux/news/actions";
 
+const url = 'https://newsdata.io/api/1/news?apikey=pub_13702e6091de01a9a37583ce1a10db68d2a3f&language=en';
+
 const NewsList = () => {
     const dispatch = useDispatch();
     const news = useSelector(state => state.news.news);
@@ -22,7 +24,7 @@ const NewsList = () => {
 
     useEffect(() => {
         if(category) {
-            axios.get(`https://newsdata.io/api/1/news?apikey=pub_13702e6091de01a9a37583ce1a10db68d2a3f&language=en&category=${category}`)
+            axios.get(`${url}&category=${category}`)
             .then((response) => {
                 const news = response.data.results;
             dispatch(ADD_NEWS(news));
@@ -43,7 +45,7 @@ const NewsList = () => {
 
     return (
         <div className="container">
-            <div>
+            <div className={styles.newsListSearch}>
                 <NewsSearch news={news}/>
             </div>
         <div className={styles.newsListCards}>

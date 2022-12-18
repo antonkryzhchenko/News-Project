@@ -36,5 +36,4 @@ const NewsSearch = ({ news }) => {
         </div>
     );
 };
-
 export default NewsSearch;

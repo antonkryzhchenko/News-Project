@@ -38,6 +38,11 @@
     cursor: pointer;
     position: relative;
 }
+
+.headerUlDark li {
+    color: white;
+}
+
 .headerUl li:after {
     display: block;
     content: "";

@@ -50,3 +50,8 @@
     min-width: 100%;
     min-height: 100%;
 }
+
+.newsListSearch {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
